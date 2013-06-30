@@ -13,15 +13,16 @@ if (!window.console) console = {log : function() {}};
   function init() {
     var elems, arg = arguments[0];
     if (typeof arg == "string") {
-      switch (arg.charAt(0)) {
-        case "#":
-          elems = [document.getElementById(arg.slice(1))];
-          break;
-        case ".":
-          elems = document.getElementsByClassName(arg.slice(1));
-          break;
-        default:
-          elems = document.getElementsByTagName(arg);
+      if (/^#[\w\-]+$/.test(arg)) {
+        elems = [document.getElementById(arg.slice(1))];
+      } else if (/^[\w]+$/.test(arg)){
+        elems = document.getElementsByTagName(arg);
+      } else if (document.getElementsByClassName && /^\.[\w\-]+$/.test(arg)) {
+        elems = document.getElementsByClassName(arg.slice(1));
+      } else if (document.querySelectorAll) {
+        elems = document.querySelectorAll(arg);
+      } else {
+        elems = [];
       }
     } else if (arg instanceof Array) {
       elems = arg;
