@@ -182,4 +182,5 @@ if (!window.console) console = {log : function() {}};
 
   inliner.fn = inliner.prototype;
   window.inliner = inliner;
+  if (!('$' in window)) window.$ = inliner;
 })();
