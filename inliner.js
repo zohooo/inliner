@@ -1,7 +1,8 @@
 
-// Inliner: JavaScript Library for Modern Browsers
-// License: The MIT License
-// Source:  https://github.com/zohooo/inliner
+// Inliner: Simple Library for Modern Browsers
+// Release: Version 0.01 on 2013-11-17
+// License: The MIT license
+// Source: https://github.com/zohooo/inliner
 
 if (!window.console) console = {log : function() {}};
 

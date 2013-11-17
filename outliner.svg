@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <!--
-Outliner: CSS Library for Modern Browsers
-License:  The MIT License
-Source:   https://github.com/zohooo/inliner
+Outliner: Simple Library for Modern Browsers
+Release: Version 0.01 on 2013-11-17
+License: The MIT license
+Source: https://github.com/zohooo/inliner
 -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
 <g stroke="#333" fill="#333">
