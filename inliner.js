@@ -72,31 +72,22 @@ if (!window.console) console = {log : function() {}};
   };
 
   inliner.extend({
-    browser: (function() {
+    agent: (function() {
       var ua = navigator.userAgent;
-      var msie, firefox, opera, safari, chrome, webkit;
-      if (/MSIE ([^;]+)/.test(ua)) {
-        msie = parseFloat(RegExp["$1"]);
-      } else if (/Firefox\/(\S+)/.test(ua)) {
-        firefox = parseFloat(RegExp["$1"]);
-      } else if (/AppleWebKit\/(\S+)/.test(ua)) {
-        webkit = parseFloat(RegExp["$1"]);
-        if (/Chrome\/(\S+)/.test(ua)) {
-          chrome = parseFloat(RegExp["$1"]);
-        } else if (/Version\/(\S+)/.test(ua)) {
-          safari = parseFloat(RegExp["$1"]);
+      var sniffs = [   [/Firefox\/(\S+)/, "firefox", "gecko"]
+      /* IE 10- */    ,[/MSIE ([^;]+)/, "msie", "trident"]
+      /* IE 11+ */    ,[/Trident\/[^;]+; rv:([^\)]+)/, "msie", "trident"]
+      /* Opera 12- */ ,[/Opera.+ Version\/(\S+)/, "opera", "presto"]
+      /* Opera 14+ */ ,[/OPR\/(\S+)/, "opera", "webkit"]
+                      ,[/Chrome\/(\S+)/, "chrome", "webkit"]
+                      ,[/Version\/(\S+) .*Safari/, "safari", "webkit"]
+      ];
+      for (var i = 0; i < sniffs.length; i++) {
+        if (sniffs[i][0].test(ua)) {
+          return {browser: sniffs[i][1], engine: sniffs[i][2], version: parseFloat(RegExp["$1"])};
         }
-      } else if (window.opera) {
-        opera = parseFloat(window.opera.version());
       }
-      return {
-        msie    : (msie)? msie: 0,
-        firefox : (firefox)? firefox: 0,
-        webkit  : (webkit)? webkit: 0,
-        safari  : (safari)? safari: 0,
-        chrome  : (chrome)? chrome: 0,
-        opera   : (opera)? opera: 0
-      };
+      return { browser: "unknown", engine: "unknown", version: 0};
     })(),
 
     touch: ("ontouchstart" in window),
