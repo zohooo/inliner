@@ -8,8 +8,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Inliner and Outliner</title>
+<link rel="stylesheet" type="text/css" href="inliner.css"/>
 <link rel="stylesheet" type="text/css" href="outliner.css"/>
 <style>
+html {
+  margin: 32px;
+}
+ul {
+  padding: 0;
+}
 .the-icons {
   list-style: none;
   font-size: 16px;
@@ -21,6 +28,18 @@
 </style>
 </head>
 <body>
+<h3>Dropdowns</h3>
+<button type="button" class="btn">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<div class="dropdown-toggle">
+  <button type="button" class="btn btn-primary">Dropdown</button>
+  <ul class="dropdown-menu">
+    <li>First</li>
+    <li>Second</li>
+    <li>Third</li>
+  </ul>
+</div>
+<h3>Icons</h3>
 <ul class="the-icons">
 <li><i class="icon-close"></i> icon-close</li>
 <li><i class="icon-square"></i> icon-square</li>

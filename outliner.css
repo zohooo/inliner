@@ -6,6 +6,64 @@ License: The MIT license
 Source: https://github.com/zohooo/inliner
 */
 
+.btn {
+  color: #333;
+  background: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin: 0;
+  height: 2em;
+}
+
+.btn:hover {
+  background: #eee;
+}
+
+.btn-primary {
+  color: white;
+  background: #3B5F9B;
+  border: 1px solid #9EB0CD;
+}
+
+.btn-primary:hover {
+  background: #3069B6;
+}
+
+.dropdown-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle > .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  display: none;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: white;
+}
+
+.dropdown-toggle:hover > .dropdown-menu {
+  display: inline-block;
+}
+
+.dropdown-menu li {
+  list-style-type: none;
+  padding: 0 .5em;
+  margin: 0;
+  line-height: 2;
+  color: black;
+}
+
+.dropdown-menu li:hover {
+  color: white;
+  background: #3069B6;
+}
+
 @font-face {
   font-family: "outliner";
   src: url("outliner.woff") format("woff"),
