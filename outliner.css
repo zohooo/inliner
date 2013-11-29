@@ -6,76 +6,89 @@ License: The MIT license
 Source: https://github.com/zohooo/inliner
 */
 
-.icon-x12, .icon-x16, .icon-x24, .icon-x32, .icon-x48, .icon-x96 {
-  display: inline-block;
-  vertical-align: middle;
-  background-image: url(outliner.svg);
-  background-repeat: no-repeat;
-  background-size: 500% 500%;
+@font-face {
+  font-family: "outliner";
+  src: url("outliner.woff") format("woff"),
+       url("outliner.svg#outliner") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.icon-x12 {
-  width: 12px;
-  height: 12px;
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'outliner';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
 }
 
-.icon-x16 {
-  width: 16px;
-  height: 16px;
+.icon-close:before {
+  content: "\e000";
 }
 
-.icon-x24 {
-  width: 24px;
-  height: 24px;
+.icon-square:before {
+  content: "\e001";
 }
 
-.icon-x32 {
-  width: 32px;
-  height: 32px;
+.icon-circle:before {
+  content: "\e002";
 }
 
-.icon-x48 {
-  width: 48px;
-  height: 48px;
+.icon-half:before {
+  content: "\e003";
 }
 
-.icon-x96 {
-  width: 96px;
-  height: 96px;
+.icon-quad:before {
+  content: "\e004";
 }
 
-.icon-close {
-  background-position: 0% 0%;
+.icon-new:before {
+  content: "\e010";
 }
 
-.icon-square {
-  background-position: 25% 0%;
+.icon-disk:before {
+  content: "\e011";
 }
 
-.icon-circle {
-  background-position: 50% 0%;
+.icon-disk-open:before {
+  content: "\e012";
 }
 
-.icon-half {
-  background-position: 75% 0%;
+.icon-disk-save:before {
+  content: "\e013";
 }
 
-.icon-quad {
-  background-position: 100% 0%;
+.icon-cloud:before {
+  content: "\e014";
 }
 
-.icon-disk {
-  background-position: 0% 25%;
+.icon-cloud-open:before {
+  content: "\e015";
 }
 
-.icon-cloud {
-  background-position: 25% 25%;
+.icon-cloud-save:before {
+  content: "\e016";
 }
 
-.icon-up{
-  background-position: 0% 50%;
+.icon-up:before {
+  content: "\e020";
 }
 
-.icon-down {
-  background-position: 25% 50%;
+.icon-down:before {
+  content: "\e021";
+}
+
+.icon-share:before {
+  content: "\e030";
+}
+
+.icon-present:before {
+  content: "\e031";
+}
+
+.icon-option:before {
+  content: "\e032";
+}
+
+.icon-help:before {
+  content: "\e033";
 }
