@@ -6,12 +6,6 @@ License: The MIT license
 Source: https://github.com/zohooo/inliner
 */
 
-/* fix click event delegation in ios */
-
-body {
-  cursor: pointer;
-}
-
 /* fix button styling problem in ios */
 
 button, input[type=button] {
