@@ -18,6 +18,13 @@ button, input[type=button] {
   -webkit-appearance: button;
 }
 
+/* remove button padding in firefox */
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 /* disable resizing of textarea in webkit browser */
 
 textarea {
